@@ -41,7 +41,7 @@ RUN apk update \
     && rm -rf /var/cache/apk/*
 
 # Generate a self-signed certificate and key
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+RUN openssl req -x509 -days 365 -newkey rsa:2048 \
     -keyout /etc/nginx/conf.d/cert.key \
     -out /etc/nginx/conf.d/cert.crt \
     -subj "/C=KR/L=Seoul/O=42Seoul/CN=dahkang.42.fr"
