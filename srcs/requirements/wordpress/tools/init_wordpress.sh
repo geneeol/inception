@@ -15,7 +15,7 @@ chmod -R 755 /var/www/html
 # wordpress download
 if [ ! -d "/var/www/html/wp-admin" ]; then
     wp core download --path=/var/www/html
-    wp config create --dbname=$MARIADB_DATABASE --dbuser=$MARIADB_USER --dbpass=$MARIADB_PASSWORD --dbhost=$DB_HOST
+    wp config create --dbname=$MARIADB_DATABASE --dbuser=$MARIADB_USER --dbpass=$MARIADB_PASSWORD --dbhost=$MARIADB_HOST:
     wp core install --url=$WP_URL --title=$WP_TITLE --admin_user=$WP_ADMIN_USER --admin_password=$WP_ADMIN_PASS --admin_email=$WP_ADMIN_USER@example.com
     wp user create $WP_USER $WP_USER@example.com --user_pass=$WP_USER_PASS
 fi
