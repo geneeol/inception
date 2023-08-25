@@ -21,3 +21,4 @@ if [ ! -d "/var/www/html/wp-admin" ]; then
 fi
 
 exec php-fpm81 -F
+# exec wp server --host=0.0.0.0 --port=9000
