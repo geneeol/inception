@@ -34,7 +34,8 @@ services:
       - wp_data:/var/www/html
       # - ./nginx/conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
-      - mariadb, wordpress
+      - mariadb
+      - wordpress
 
   wordpress:
     build:
@@ -54,7 +55,7 @@ services:
       MARIADB_USER: wordpress      # <-- Added
       MARIADB_PASSWORD: wordpress  # <-- Added
 
-      WP_URL: 42dahkang.com            # <-- Added
+      WP_URL: localhost            # <-- Added
       WP_TITLE: wordpress        # <-- Added
       WP_ADMIN_USER: dahkang   # <-- Added
       WP_ADMIN_PASS: 1234   # <-- Added
