@@ -26,4 +26,5 @@ COPY conf/default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 443
 
 # Command to run NGINX
+# TODO: dumb-init 추가
 CMD ["nginx", "-g", "daemon off;"]

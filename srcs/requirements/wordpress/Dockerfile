@@ -28,6 +28,9 @@ RUN apk update && apk add curl php81 php81-fpm php81-mysqli php81-openssl php81-
 
 RUN curl -o /usr/local/bin/wp -fSL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
+# TODO: 실행권한 추가
+# RUN chmod +x ./tools/init_wordpress.sh
+
 COPY ./conf/www.conf /etc/php81/php-fpm.d
 
 COPY ./tools/init_wordpress.sh /scripts/
