@@ -1,9 +1,5 @@
 FROM alpine:3.17
 
-# Install NGINX package
-# RUN apk add --no-cache nginx
-
-
 # nginx 설치
 RUN apk update \
     && apk add openssl curl ca-certificates \
