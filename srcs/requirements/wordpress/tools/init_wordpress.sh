@@ -11,7 +11,7 @@ adduser -u 81 -D -S -G www-data www-data
 
 chown -R www-data:www-data /var/www/html
 
-chmod -R 755 /var/www/html
+chmod -R 770 /var/www/html
 
 # wordpress 셋업 및 유저 추가
 if [ ! -d "/var/www/html/wp-admin" ]; then
