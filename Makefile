@@ -1,12 +1,15 @@
 up:
-	mkdir -p ~/data/db_data
-	mkdir -p ~/data/wp_data
+	sudo mkdir -p /home/dahkang/data/db_data
+	sudo mkdir -p /home/dahkang/data/wp_data
 	docker-compose -f ./srcs/docker-compose.yml up -d
 
 up-log:
-	mkdir -p ~/data/db_data
-	mkdir -p ~/data/wp_data
+	sudo mkdir -p /home/dahkang/data/db_data
+	sudo mkdir -p /home/dahkang/data/wp_data
 	docker-compose -f ./srcs/docker-compose.yml up
+
+logs:
+	docker-compose -f ./srcs/docker-compose.yml logs -f
 
 down:
 	docker-compose -f ./srcs/docker-compose.yml down
