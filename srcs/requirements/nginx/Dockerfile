@@ -21,10 +21,13 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -subj "/C=KR/L=Seoul/O=42Seoul/CN=dahkang.42.fr"
 
 RUN rm -rf /etc/nginx/conf.d/default.conf
+
 COPY conf/default.conf /etc/nginx/conf.d/default.conf
+
+RUN apk add --no-cache dumb-init
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 EXPOSE 443
 
-# Command to run NGINX
-# TODO: dumb-init 추가
 CMD ["nginx", "-g", "daemon off;"]
