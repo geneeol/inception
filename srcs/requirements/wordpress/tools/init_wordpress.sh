@@ -4,6 +4,7 @@ sleep 20
 
 chmod +x /usr/local/bin/wp
 
+# www-data라는 사용자 및 그룹 추가, 추가후 소유권, 권한 부여
 grep -q "^www-data:" /etc/group || addgroup -g 81 -S www-data
 
 adduser -u 81 -D -S -G www-data www-data
@@ -12,7 +13,7 @@ chown -R www-data:www-data /var/www/html
 
 chmod -R 755 /var/www/html
 
-# wordpress download
+# wordpress 셋업 및 유저 추가
 if [ ! -d "/var/www/html/wp-admin" ]; then
     wp core download --path=/var/www/html
     wp config create --dbname=$MARIADB_DATABASE --dbuser=$MARIADB_USER --dbpass=$MARIADB_PASSWORD --dbhost=$MARIADB_HOST:
